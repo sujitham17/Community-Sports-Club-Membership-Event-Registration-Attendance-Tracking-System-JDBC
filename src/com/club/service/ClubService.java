@@ -15,7 +15,6 @@ public class ClubService {
 
 	    MemberDAO dao = new MemberDAO();
 
-	    // 🔥 duplicate check
 	    if (dao.findMemberById(m.getMemberID()) != null) {
 	        System.out.println("Member already exists!");
 	        return false;
@@ -38,7 +37,7 @@ public class ClubService {
 
         try {
             con = DBUtil.getDBConnection();
-            con.setAutoCommit(false); // 🔥 transaction starts
+            con.setAutoCommit(false);
 
             EventRegistrationDAO dao = new EventRegistrationDAO();
 
@@ -59,10 +58,10 @@ public class ClubService {
             boolean inserted = dao.insertRegistration(r, con);
 
             if (inserted) {
-                con.commit();      // ✅ success
+                con.commit();      
                 return true;
             } else {
-                con.rollback();    // ❌ failure
+                con.rollback();   
                 return false;
             }
 

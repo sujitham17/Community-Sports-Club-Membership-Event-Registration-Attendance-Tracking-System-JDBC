@@ -74,7 +74,4 @@ public class EventRegistration {
 	public void setResultStatus(String resultStatus) {
 		this.resultStatus = resultStatus;
 	}
-	
-
-    // getters & setters
 }

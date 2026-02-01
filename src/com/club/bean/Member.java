@@ -58,6 +58,4 @@ public class Member {
 		this.status = status;
 	}
 	
-
-    // getters & setters
 }
